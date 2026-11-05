@@ -1,25 +1,7 @@
 (function () {
   'use strict';
 
-  // 1. Preserve Paid Ad UTM & fbclid Parameters Across All Booking Links
-  var searchParams = new URLSearchParams(window.location.search);
-  var bookingLinks = document.querySelectorAll('.js-booking-link');
-
-  if (searchParams.toString()) {
-    bookingLinks.forEach(function (link) {
-      try {
-        var url = new URL(link.href);
-        searchParams.forEach(function (val, key) {
-          url.searchParams.set(key, val);
-        });
-        link.href = url.toString();
-      } catch (e) {
-        // Ignore invalid URLs
-      }
-    });
-  }
-
-  // 2. Interactive VSL Video Player + Topic Switcher
+  // 1. VSL Video Player + Topic Tabs
   var posterOverlay = document.getElementById('vslPoster');
   var videoIframe = document.getElementById('vslIframe');
   var vslTabs = document.querySelectorAll('.vsl-tab');
@@ -28,9 +10,7 @@
 
   function loadAndPlayVideo(videoId) {
     currentVideoId = videoId;
-    if (posterOverlay) {
-      posterOverlay.classList.add('hidden');
-    }
+    if (posterOverlay) posterOverlay.classList.add('hidden');
     if (videoIframe) {
       videoIframe.src =
         'https://www.youtube.com/embed/' +
@@ -53,100 +33,129 @@
       tab.classList.add('active');
       var vid = tab.getAttribute('data-video-id');
       var title = tab.getAttribute('data-video-title');
-      if (posterTitle && title) {
-        posterTitle.textContent = title;
-      }
+      if (posterTitle && title) posterTitle.textContent = title;
       loadAndPlayVideo(vid);
     });
   });
 
-  // 3. Interactive Symptom Checklist Mirror + Dynamic WhatsApp Pre-fill
-  var symptomCards = document.querySelectorAll('.symptom-card');
-  var feedbackBar = document.getElementById('symptomFeedback');
-  var symptomCountEl = document.getElementById('symptomCount');
-  var waLinks = document.querySelectorAll('.js-wa-link');
+  // 2. Interactive 2x3 Symptom Tap Grid + Live Match Meter
+  var symTiles = document.querySelectorAll('.sym-tile');
+  var meterText = document.getElementById('meterText');
+  var concernSelect = document.getElementById('clientConcern');
 
-  function updateSymptomSelection() {
+  function updateSymptomMeter() {
     var selected = [];
-    symptomCards.forEach(function (card) {
-      if (card.classList.contains('checked')) {
-        var label = card.getAttribute('data-symptom');
-        if (label) selected.push(label);
+    symTiles.forEach(function (t) {
+      if (t.classList.contains('checked')) {
+        selected.push(t.getAttribute('data-symptom'));
       }
     });
 
-    if (feedbackBar && symptomCountEl) {
-      if (selected.length > 0) {
-        symptomCountEl.textContent = selected.length;
-        feedbackBar.classList.add('active');
+    if (meterText) {
+      if (selected.length === 0) {
+        meterText.innerHTML =
+          '<strong>Tap any symptom above:</strong> See how our root-cause CBT + ICBT method helps.';
       } else {
-        feedbackBar.classList.remove('active');
+        meterText.innerHTML =
+          '<strong>' +
+          selected.length +
+          ' pattern(s) matched:</strong> High recovery rate (80–90%) with structured 1-on-1 loop retraining.';
       }
     }
 
-    var baseMsg =
-      'Assalamu Alaikum / Hello Counsel N Care Team, I visited your page and would like to book a consultation session with Aftab Siddiqui Sir.';
-    if (selected.length > 0) {
-      baseMsg +=
-        ' I am experiencing: ' + selected.slice(0, 4).join(', ') + '.';
+    // Pre-select matching track in checkout modal
+    if (concernSelect && selected.length > 0) {
+      var joined = selected.join(' ');
+      if (joined.indexOf('Waswasa') !== -1) {
+        concernSelect.value = 'Religious OCD (Waswasa / Scrupulosity)';
+      } else if (joined.indexOf('Couple') !== -1) {
+        concernSelect.value = 'Marriage & Couple Counseling';
+      } else if (joined.indexOf('Panic') !== -1) {
+        concernSelect.value = 'Panic Attacks & Severe Anxiety';
+      } else {
+        concernSelect.value = 'OCD & Intrusive Thoughts';
+      }
     }
-    var encoded = encodeURIComponent(baseMsg);
-    waLinks.forEach(function (a) {
-      a.href = 'https://wa.me/919324749190?text=' + encoded;
-    });
   }
 
-  symptomCards.forEach(function (card) {
-    card.addEventListener('click', function () {
-      card.classList.toggle('checked');
-      var isChecked = card.classList.contains('checked');
-      card.setAttribute('aria-pressed', isChecked ? 'true' : 'false');
-      updateSymptomSelection();
+  symTiles.forEach(function (tile) {
+    tile.addEventListener('click', function () {
+      tile.classList.toggle('checked');
+      updateSymptomMeter();
     });
   });
 
-  // 4. Testimonial Category Filter
-  var filterPills = document.querySelectorAll('.filter-pill');
-  var testimonialCards = document.querySelectorAll('.testimonial-card');
+  // 3. Interactive 4-Program Tabs
+  var progTabs = document.querySelectorAll('.prog-tab');
+  var progPanels = document.querySelectorAll('.prog-panel');
 
-  filterPills.forEach(function (pill) {
+  progTabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      progTabs.forEach(function (b) {
+        b.classList.remove('active');
+      });
+      progPanels.forEach(function (p) {
+        p.classList.remove('active');
+      });
+      btn.classList.add('active');
+      var target = document.getElementById('prog-' + btn.getAttribute('data-prog'));
+      if (target) target.classList.add('active');
+    });
+  });
+
+  // 4. Instant Slot & Payment Checkout Modal -> Redirects to thank-you.html
+  var modal = document.getElementById('checkoutModal');
+  var openBtns = document.querySelectorAll('.js-open-checkout');
+  var closeBtn = document.getElementById('closeModal');
+  var slotPills = document.querySelectorAll('.slot-pill');
+  var bookingForm = document.getElementById('bookingForm');
+  var selectedSlot = 'Today · 6:00 PM';
+
+  openBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (modal) modal.classList.add('open');
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      if (modal) modal.classList.remove('open');
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) modal.classList.remove('open');
+    });
+  }
+
+  slotPills.forEach(function (pill) {
     pill.addEventListener('click', function () {
-      filterPills.forEach(function (p) {
+      slotPills.forEach(function (p) {
         p.classList.remove('active');
       });
       pill.classList.add('active');
-      var cat = pill.getAttribute('data-filter');
-
-      testimonialCards.forEach(function (card) {
-        var cardCat = card.getAttribute('data-category') || '';
-        if (cat === 'all' || cardCat.indexOf(cat) !== -1) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      selectedSlot = pill.getAttribute('data-slot') || 'Today · 6:00 PM';
     });
   });
 
-  // 5. Slide-in Sticky Bottom Bar (Scroll Past Hero or 8s Fallback)
-  var sticky = document.getElementById('stickyCta');
-  var shown = false;
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('clientName').value.trim() || 'Client';
+      var phone = document.getElementById('clientPhone').value.trim() || '';
+      var concern = document.getElementById('clientConcern').value;
+      var bookingId = 'CNC-' + Math.floor(1000 + Math.random() * 9000);
 
-  function showBar() {
-    if (shown || !sticky) return;
-    shown = true;
-    sticky.classList.add('visible');
+      var qs = new URLSearchParams({
+        name: name,
+        phone: phone,
+        concern: concern,
+        slot: selectedSlot,
+        id: bookingId
+      });
+
+      window.location.href = 'thank-you.html?' + qs.toString();
+    });
   }
-
-  window.addEventListener(
-    'scroll',
-    function () {
-      if (window.scrollY > window.innerHeight * 0.75) {
-        showBar();
-      }
-    },
-    { passive: true }
-  );
-
-  setTimeout(showBar, 8000);
 })();
