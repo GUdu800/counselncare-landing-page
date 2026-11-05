@@ -1,0 +1,1397 @@
+:root {
+  --teal: #167f75;
+  --teal-dark: #0e5f57;
+  --teal-soft: #eaf5f3;
+  --teal-border: #bce0dc;
+  --maroon: #5c1a2e;
+  --maroon-soft: #fdf5f7;
+  --maroon-border: #e5c5cf;
+  --lavender: #c9a3d8;
+  --cream-card: #fcf7e6;
+  --olive: #6f7d3c;
+  --ink: #171b30;
+  --body-text: #26292f;
+  --muted: #596072;
+  --paper: #ffffff;
+  --surface: #f6f9f9;
+  --border: #dfe5e6;
+  --whatsapp: #1fa855;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
+  background-color: #e9efee;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 520px;
+  min-height: 100vh;
+  background-color: var(--paper);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--body-text);
+  line-height: 1.55;
+  padding-bottom: 82px;
+  overflow-x: hidden !important;
+  box-shadow: 0 0 42px rgba(23, 27, 48, 0.12);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile Container Spine */
+.wrap {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Top Pill Banner (MannTalaash Mobile Exact Match) */
+.top-banner-wrap {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.pill-banner {
+  background: var(--teal);
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.01em;
+  padding: 9px 10px;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1.25;
+}
+
+.pill-banner svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Compact Mobile Brand Header */
+.mini-brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0 6px;
+  border-bottom: 1px solid #edf2f2;
+  margin-bottom: 6px;
+}
+
+.brand-identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  min-width: 0;
+}
+
+.brand-logo-svg {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.brand-identity-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand-name {
+  font-weight: 800;
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.brand-sub {
+  font-size: 10.5px;
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-wa-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  background: var(--teal-soft);
+  border: 1px solid var(--teal-border);
+  padding: 5px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.header-wa-chip svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+/* Typography Helpers */
+.heading-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  color: var(--teal);
+  text-align: center;
+  line-height: 1.25;
+}
+
+.heading-serif {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--teal);
+  text-align: center;
+  line-height: 1.24;
+}
+
+/* Section Spacing */
+section {
+  padding: 22px 0;
+}
+
+.section-alt {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Hero Section (Fits Above/Near Fold on Mobile Like MannTalaash) */
+.hero-section {
+  padding-top: 4px;
+  padding-bottom: 20px;
+}
+
+.hero-heading {
+  font-size: 18.5px;
+  margin: 4px 0 8px;
+  color: var(--teal);
+  line-height: 1.26;
+}
+
+.hero-sub {
+  font-weight: 500;
+  color: #2c2c2c;
+  text-align: center;
+  font-size: 12.5px;
+  line-height: 1.42;
+  margin: 0 0 10px;
+}
+
+/* 2x2 Badge Pill Grid (MannTalaash Mobile Proportions) */
+.badge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.badge-pill {
+  border: 1.5px solid var(--maroon);
+  background: #ffffff;
+  border-radius: 24px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 10.5px;
+  color: var(--ink);
+  padding: 6px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  line-height: 1.2;
+}
+
+.badge-pill svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  color: var(--maroon);
+}
+
+/* Mobile-Optimized VSL Video Box */
+.vsl-card {
+  background: var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(23, 27, 48, 0.14);
+  margin-bottom: 10px;
+  border: 1.5px solid var(--teal);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: clamp(175px, 26vh, 215px);
+  background: #0d121f;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-poster-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(15, 22, 38, 0.9) 0%, rgba(22, 127, 117, 0.78) 100%),
+              url('assets/aftab-portrait.jpg') center 18% / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.25s ease;
+}
+
+.video-poster-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.play-pulse-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.24);
+  margin-bottom: 8px;
+}
+
+.play-pulse-btn svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+  fill: var(--teal);
+}
+
+.poster-title {
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.3;
+  margin-bottom: 5px;
+  max-width: 94%;
+}
+
+.poster-meta {
+  font-size: 10.5px;
+  opacity: 0.95;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 3px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Video Topic Switcher Tabs */
+.vsl-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #101626;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.vsl-tab {
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-family: inherit;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 8px 4px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.vsl-tab svg {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.vsl-tab:last-child {
+  border-right: 0;
+}
+
+.vsl-tab.active {
+  background: var(--teal);
+  color: #ffffff;
+}
+
+.hero-caption {
+  font-style: italic;
+  font-weight: 400;
+  text-align: left;
+  color: #2c2c2c;
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin: 0 0 10px;
+}
+
+/* Trust Row */
+.trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.trust-badge-svg {
+  width: 52px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.trust-row span {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 11.5px;
+  color: var(--teal);
+  line-height: 1.3;
+}
+
+/* Primary CTA Buttons (MannTalaash Mobile Exact Match) */
+.cta-btn {
+  display: block;
+  width: 100%;
+  background: var(--teal);
+  color: #ffffff !important;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  margin: 12px auto 6px;
+  box-shadow: 0 6px 16px rgba(22, 127, 117, 0.25);
+  border: 0;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.cta-btn:active,
+.cta-btn:hover {
+  background: var(--teal-dark);
+}
+
+.cta-subnote {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.92;
+  margin-top: 2px;
+}
+
+.secondary-wa-row {
+  text-align: center;
+  margin-top: 4px;
+}
+
+.wa-inline-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+.wa-inline-link svg {
+  width: 14px;
+  height: 14px;
+  color: var(--whatsapp);
+  flex-shrink: 0;
+}
+
+.wa-inline-link span {
+  text-decoration: underline;
+  color: var(--teal-dark);
+}
+
+/* Section 2: Case Outcome Cards (Mobile Single-Column / 2x2 Compact) */
+.case-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.case-mini-card {
+  background: #ffffff;
+  border: 1.5px solid var(--teal-border);
+  border-radius: 10px;
+  padding: 13px 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.case-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.case-tag {
+  display: inline-block;
+  background: var(--maroon-soft);
+  color: var(--maroon);
+  border: 1px solid var(--maroon-border);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
+.case-quote-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--teal-border);
+  flex-shrink: 0;
+}
+
+.case-quote {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.case-author {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 700;
+  border-top: 1px dashed var(--border);
+  padding-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.verified-pill {
+  color: var(--teal);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.verified-pill svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* Section 3: Symptom Checklist */
+.symptom-intro-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 4px 0 14px;
+}
+
+.symptom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.symptom-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #ffffff;
+  border: 1.5px solid #d7e2e1;
+  border-radius: 10px;
+  padding: 13px 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.symptom-card.checked {
+  background: var(--teal-soft);
+  border-color: var(--teal);
+}
+
+.symptom-check-icon {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--teal);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.symptom-card.checked .symptom-check-icon {
+  background: var(--maroon);
+}
+
+.symptom-check-icon svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.symptom-text {
+  font-size: 13.8px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.48;
+}
+
+.symptom-text strong {
+  color: var(--maroon);
+}
+
+.symptom-feedback-bar {
+  margin-top: 14px;
+  background: var(--maroon-soft);
+  border: 1.5px solid var(--maroon-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: center;
+  display: none;
+}
+
+.symptom-feedback-bar.active {
+  display: block;
+}
+
+.symptom-feedback-bar p {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--maroon);
+  margin-bottom: 8px;
+}
+
+.empathy-banner {
+  margin-top: 18px;
+  text-align: center;
+  padding: 16px 14px;
+  background: var(--cream-card);
+  border: 1.5px solid #e6dbb8;
+  border-radius: 12px;
+}
+
+.empathy-banner h3 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 19.5px;
+  color: var(--maroon);
+  line-height: 1.3;
+}
+
+/* Section 4: Who Is This Breakthrough Session For? (Single-Column Mobile Cards) */
+.persona-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.persona-card {
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  padding: 22px 18px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.persona-svg-wrap {
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--cream-card);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #e8dec0;
+}
+
+.persona-svg-wrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+.persona-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  background: var(--teal-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.persona-card h3 {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: #1c1c1c;
+}
+
+.persona-card p {
+  font-size: 14px;
+  line-height: 1.58;
+  color: #3a3a3a;
+  margin-bottom: 12px;
+}
+
+.persona-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.persona-chip {
+  font-size: 11px;
+  font-weight: 600;
+  background: #f3f5f6;
+  color: var(--body-text);
+  padding: 4px 9px;
+  border-radius: 6px;
+  border: 1px solid #e1e6e8;
+}
+
+/* Section 5: Client Testimonials */
+.testimonial-filter-bar {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  gap: 6px;
+  margin: 12px 0 14px;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.testimonial-filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-pill {
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  color: var(--body-text);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.filter-pill.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #ffffff;
+}
+
+.testimonials-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border: 1.5px solid #d8e4e2;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.client-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.client-Initial {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.client-Initial.maroon {
+  background: var(--maroon);
+}
+
+.client-meta h4 {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.client-meta span {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 600;
+  display: block;
+}
+
+.outcome-badge {
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+  border: 1px solid var(--teal-border);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.stars-svg-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 8px;
+  color: #f59e0b;
+}
+
+.stars-svg-row svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.testimonial-body {
+  font-size: 13.8px;
+  line-height: 1.6;
+  color: var(--body-text);
+}
+
+.testimonial-highlight {
+  background: #fef9c3;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Section 6: Specialist Bio */
+.expert-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.expert-photo {
+  width: 100%;
+  border-bottom: 3px solid var(--maroon);
+}
+
+.expert-body {
+  padding: 18px 16px;
+}
+
+.bio-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--maroon-soft);
+  color: var(--maroon);
+  border: 1px solid var(--maroon-border);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.bio-eyebrow svg {
+  width: 13px;
+  height: 13px;
+}
+
+.bio-name {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--teal);
+  margin: 0 0 10px;
+  text-align: left;
+}
+
+.bio-text {
+  font-size: 14.5px;
+  line-height: 1.62;
+  margin-bottom: 12px;
+  color: var(--body-text);
+}
+
+.modality-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 16px;
+}
+
+.modality-pill {
+  background: var(--surface);
+  border: 1px solid #cfd8d7;
+  color: var(--ink);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+
+.tick-list {
+  list-style: none;
+  margin: 14px 0;
+  padding: 0;
+}
+
+.tick-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.tick-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+  margin-top: 1px;
+}
+
+.tick-circle svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  stroke-width: 3;
+  fill: none;
+}
+
+/* Section 7: Clinical Promise */
+.promise-box {
+  background: linear-gradient(180deg, #ffffff 0%, var(--teal-soft) 100%);
+  border: 2px solid var(--teal);
+  border-radius: 14px;
+  padding: 22px 16px;
+  text-align: center;
+}
+
+.promise-seal-svg {
+  width: 124px;
+  height: 124px;
+  margin: 4px auto 16px;
+}
+
+.promise-text {
+  font-weight: 700;
+  font-size: 14.2px;
+  line-height: 1.58;
+  margin-bottom: 12px;
+  text-align: left;
+  color: var(--ink);
+}
+
+/* Section 8: How Does It Work? (Vertical Mobile-First SVG Diagram) */
+.method-diagram-wrap {
+  background: #ffffff;
+  border: 1.5px solid var(--teal-border);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 0 0 16px;
+}
+
+.method-diagram-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.how-p {
+  font-size: 14.5px;
+  line-height: 1.62;
+  margin-bottom: 12px;
+}
+
+.teal-text {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.contrast-box {
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  margin: 14px 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.x-line {
+  font-weight: 700;
+  font-size: 13.8px;
+  color: var(--ink);
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  line-height: 1.42;
+}
+
+.x-line svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.stages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.stage-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1.5px solid #d8e3e2;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.stage-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--maroon);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+}
+
+.stage-content {
+  flex: 1;
+}
+
+.stage-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.stage-content h3 {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.stage-icon-svg {
+  width: 20px;
+  height: 20px;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.stage-content p {
+  font-size: 13.5px;
+  color: var(--body-text);
+  line-height: 1.52;
+}
+
+/* Section 9: FAQ Accordion (MannTalaash Mobile Style) */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+details.faq-item {
+  border: 2px solid var(--maroon);
+  border-radius: 14px;
+  background: var(--paper);
+}
+
+details.faq-item[open] {
+  border-color: var(--lavender);
+}
+
+details.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-q {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.38;
+  color: var(--maroon);
+}
+
+details.faq-item[open] .faq-q {
+  color: var(--ink);
+}
+
+.faq-icon {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--maroon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-icon svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--maroon);
+  transition: transform 0.25s ease;
+}
+
+details.faq-item[open] .faq-icon {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+details.faq-item[open] .faq-icon svg {
+  stroke: #ffffff;
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 16px 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--body-text);
+}
+
+/* Section 10: Two Options Fork (Single-Column Mobile Stack Like MannTalaash) */
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.option-box {
+  border: 2px solid var(--teal);
+  border-radius: 14px;
+  padding: 18px;
+  background: #ffffff;
+}
+
+.option-box.option-wise {
+  background: var(--teal-soft);
+}
+
+.option-illustration {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.option-illustration svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.option-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.option-label.warn {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.option-label.smart {
+  background: var(--teal);
+  color: #ffffff;
+}
+
+.option-box h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: #1c1c1c;
+}
+
+.option-box p {
+  font-size: 13.8px;
+  line-height: 1.58;
+  color: #3a3a3a;
+}
+
+/* Footer */
+footer {
+  background: var(--teal);
+  color: #ffffff;
+  padding: 32px 0 30px;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.footer-contact-pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 14px 0 16px;
+}
+
+.footer-contact-pill {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footer-contact-pill svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+footer .foot-links {
+  font-size: 12.5px;
+  margin-bottom: 16px;
+  opacity: 0.95;
+}
+
+footer .foot-links a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+footer .disclaimer {
+  font-size: 11.5px;
+  line-height: 1.55;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.12);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+footer .cta-btn {
+  background: #ffffff;
+  color: var(--teal) !important;
+  margin: 16px auto 12px;
+}
+
+footer .rights {
+  font-size: 11.5px;
+  opacity: 0.85;
+}
+
+/* Sticky Bottom Conversion Bar (Mobile Constrained) */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 520px;
+  background: var(--teal);
+  padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.22);
+  z-index: 999;
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.sticky-cta.visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.sticky-book-btn {
+  display: block;
+  background: #ffffff;
+  color: var(--teal) !important;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  line-height: 1.2;
+}
+
+.sticky-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: var(--whatsapp);
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.sticky-wa-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 390px) {
+  .hero-heading {
+    font-size: 17px;
+  }
+  .badge-pill {
+    font-size: 9.8px;
+    padding: 5px 4px;
+  }
+  .footer-contact-pills {
+    grid-template-columns: 1fr;
+  }
+}
