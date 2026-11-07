@@ -44,10 +44,11 @@
       align-items: center;
       gap: 28px;
     }
-    /* Each A4 Page Sheet (210mm x 297mm) */
+    /* Each A4 Page Sheet (Exact 210mm x 297mm Standard) */
     .a4-page {
       width: 210mm;
-      min-height: 297mm;
+      height: 297mm;
+      max-height: 297mm;
       background: var(--card-bg);
       border-radius: 8px;
       box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
@@ -57,6 +58,7 @@
       flex-direction: column;
       justify-content: space-between;
       position: relative;
+      box-sizing: border-box;
     }
     .a4-page.page-1 {
       page-break-after: always;
@@ -65,7 +67,7 @@
     .header {
       background: linear-gradient(135deg, #0B1325 0%, #1E293B 100%);
       color: #FFFFFF;
-      padding: 40px 44px 36px;
+      padding: 24px 36px 20px;
       position: relative;
     }
     .header::after {
@@ -74,13 +76,13 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 3px;
       background: linear-gradient(90deg, #0F9D58, #34D399, #38BDF8);
     }
     .page2-topbar {
       background: linear-gradient(135deg, #0B1325 0%, #1E293B 100%);
       color: #FFFFFF;
-      padding: 18px 44px;
+      padding: 12px 36px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -98,101 +100,101 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       flex-wrap: wrap;
     }
     .logo-badge {
       background: #FFFFFF;
-      padding: 7px 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+      padding: 5px 12px;
+      border-radius: 9px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
       display: inline-flex;
       align-items: center;
       justify-content: center;
     }
     .red-panther-logo {
-      height: 38px;
+      height: 28px;
       width: auto;
-      max-width: 140px;
+      max-width: 110px;
       display: block;
     }
     .footer-logo {
-      height: 24px;
+      height: 20px;
       width: auto;
-      max-width: 90px;
+      max-width: 80px;
       display: block;
     }
     .brand-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
     }
     .brand-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
       color: #FFFFFF;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     .brand-badge {
       display: inline-block;
-      font-size: 11.5px;
+      font-size: 10px;
       text-transform: uppercase;
       font-weight: 700;
-      padding: 5px 12px;
+      padding: 3px 10px;
       border-radius: 20px;
       background: rgba(16, 185, 129, 0.2);
       color: #34D399;
       border: 1px solid rgba(52, 211, 153, 0.3);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
     .meta-box {
       text-align: right;
-      font-size: 13px;
+      font-size: 11px;
       color: #94A3B8;
-      line-height: 1.55;
+      line-height: 1.45;
     }
     .meta-box strong { color: #FFFFFF; }
     .hero-title {
-      font-size: 28px;
+      font-size: 21px;
       font-weight: 800;
       color: #FFFFFF;
-      line-height: 1.25;
-      margin-bottom: 10px;
-      letter-spacing: -0.5px;
+      line-height: 1.24;
+      margin-bottom: 6px;
+      letter-spacing: -0.4px;
     }
     .hero-sub {
-      font-size: 15px;
+      font-size: 12.5px;
       color: #CBD5E1;
-      max-width: 680px;
-      line-height: 1.55;
+      max-width: 660px;
+      line-height: 1.42;
     }
     .client-card {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 12px;
-      padding: 15px 20px;
-      margin-top: 22px;
+      border-radius: 9px;
+      padding: 8px 14px;
+      margin-top: 12px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13.8px;
+      gap: 10px;
+      font-size: 11.5px;
     }
     .client-card div strong { color: #F1F5F9; }
     .content-body {
-      padding: 36px 44px 28px;
+      padding: 16px 36px 14px;
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
     .section {
-      margin-bottom: 28px;
+      margin-bottom: 12px;
       page-break-inside: avoid;
       break-inside: avoid;
     }
@@ -200,58 +202,58 @@
       margin-bottom: 0;
     }
     .section-title {
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 800;
       color: var(--dark);
-      margin-bottom: 16px;
+      margin-bottom: 9px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
     .section-title span.number {
       background: var(--primary-light);
       color: var(--primary);
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 800;
     }
     .sow-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 10px;
     }
     .sow-card {
       background: #F8FAFC;
       border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 20px 22px;
+      border-radius: 10px;
+      padding: 11px 13px;
     }
     .sow-card h4 {
-      font-size: 15.5px;
+      font-size: 12.8px;
       font-weight: 800;
       color: var(--dark);
-      margin-bottom: 12px;
+      margin-bottom: 7px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
     .sow-card ul {
       list-style: none;
-      font-size: 13.5px;
+      font-size: 11.2px;
       color: var(--slate);
     }
     .sow-card ul li {
       position: relative;
-      padding-left: 24px;
-      margin-bottom: 9px;
-      line-height: 1.52;
+      padding-left: 18px;
+      margin-bottom: 5px;
+      line-height: 1.38;
     }
     .sow-card ul li:last-child {
       margin-bottom: 0;
@@ -260,67 +262,67 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 4px;
-      width: 15px;
-      height: 15px;
+      top: 3px;
+      width: 12px;
+      height: 12px;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F9D58' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
       background-size: contain;
       background-repeat: no-repeat;
     }
     .icon-svg {
-      width: 19px;
-      height: 19px;
+      width: 16px;
+      height: 16px;
       flex-shrink: 0;
       color: var(--primary);
     }
     .support-list {
       list-style: none;
-      font-size: 13.8px;
+      font-size: 11.5px;
       color: var(--slate);
     }
     .support-list li {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 12px;
-      line-height: 1.52;
+      gap: 8px;
+      margin-bottom: 6px;
+      line-height: 1.38;
     }
     .support-list li:last-child {
       margin-bottom: 0;
     }
     .support-list .icon-svg {
-      margin-top: 3px;
+      margin-top: 2px;
     }
     .pricing-table {
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      border-radius: 12px;
+      border-radius: 9px;
       overflow: hidden;
       border: 1.5px solid var(--border);
-      margin-top: 8px;
+      margin-top: 4px;
     }
     .pricing-table th {
       background: #F1F5F9;
       color: var(--dark);
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 14px 20px;
+      letter-spacing: 0.4px;
+      padding: 8px 12px;
       text-align: left;
     }
     .pricing-table td {
-      padding: 16px 20px;
-      font-size: 14px;
+      padding: 9px 12px;
+      font-size: 11.8px;
       border-top: 1px solid var(--border);
       vertical-align: top;
-      line-height: 1.5;
+      line-height: 1.36;
     }
     .price-col {
       text-align: right;
       font-weight: 800;
-      font-size: 16px;
+      font-size: 13.5px;
       color: var(--dark);
       white-space: nowrap;
     }
@@ -331,86 +333,86 @@
     .total-row td {
       border-top: 2px solid var(--border);
       color: var(--dark);
-      padding: 15px 20px;
+      padding: 9px 12px;
     }
     .badge-highlight {
       display: inline-block;
-      font-size: 11px;
-      padding: 2px 8px;
+      font-size: 9.5px;
+      padding: 1px 6px;
       border-radius: 4px;
       background: #FEF3C7;
       color: #92400E;
       font-weight: 700;
-      margin-left: 6px;
+      margin-left: 4px;
     }
     .timeline-banner {
       background: linear-gradient(135deg, rgba(15, 157, 88, 0.09) 0%, rgba(56, 189, 248, 0.09) 100%);
       border: 1.5px solid rgba(15, 157, 88, 0.28);
-      border-radius: 14px;
-      padding: 20px 24px;
+      border-radius: 10px;
+      padding: 10px 14px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 10px;
     }
     .timeline-item h5 {
-      font-size: 11.5px;
+      font-size: 9.5px;
       text-transform: uppercase;
       color: var(--muted);
       font-weight: 700;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .timeline-item p {
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 800;
       color: var(--dark);
     }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 8px;
     }
     .service-box {
       background: #FFFFFF;
       border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 15px 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border-radius: 9px;
+      padding: 8px 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
     }
     .service-box h5 {
-      font-size: 13.8px;
+      font-size: 11.5px;
       font-weight: 800;
       color: var(--dark);
-      margin-bottom: 6px;
+      margin-bottom: 3px;
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 5px;
     }
     .service-box p {
-      font-size: 12.2px;
+      font-size: 10.2px;
       color: var(--muted);
-      line-height: 1.48;
+      line-height: 1.35;
     }
     .page1-footer {
       border-top: 1px solid var(--border);
-      padding: 16px 44px;
+      padding: 10px 36px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #F8FAFC;
-      font-size: 12.5px;
+      font-size: 11px;
       color: var(--muted);
     }
     .page-pill {
       background: #E2E8F0;
       color: var(--dark);
       font-weight: 800;
-      font-size: 11.5px;
-      padding: 4px 12px;
+      font-size: 10px;
+      padding: 3px 10px;
       border-radius: 999px;
     }
     .footer-actions {
       border-top: 1px solid var(--border);
-      padding: 22px 44px;
+      padding: 12px 36px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -420,15 +422,15 @@
       background: var(--primary);
       color: #FFFFFF;
       border: none;
-      padding: 12px 24px;
-      border-radius: 10px;
+      padding: 8px 16px;
+      border-radius: 8px;
       font-weight: 800;
-      font-size: 14px;
+      font-size: 12px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      box-shadow: 0 6px 18px rgba(15, 157, 88, 0.28);
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(15, 157, 88, 0.24);
       transition: background 0.2s;
     }
     .print-btn:hover {
@@ -436,17 +438,17 @@
     }
     .sign-stamp {
       text-align: right;
-      font-size: 12.5px;
+      font-size: 11px;
       color: var(--muted);
-      line-height: 1.45;
+      line-height: 1.35;
     }
     .sign-stamp strong {
       display: block;
       color: var(--dark);
-      font-size: 14px;
+      font-size: 12px;
     }
     .contact-note {
-      font-size: 13px;
+      font-size: 11px;
       color: var(--muted);
     }
     .contact-note strong { color: var(--dark); }
@@ -740,7 +742,7 @@
             <tr>
               <td>
                 <strong>High-Converting Meta Ads Landing Page + Thank You Funnel (Astro.js)</strong>
-                <div style="font-size: 13px; color: var(--muted); margin-top: 5px;">
+                <div style="font-size: 10.8px; color: var(--muted); margin-top: 3px; line-height: 1.35;">
                   Built with Astro.js framework — integrated with your existing event booking engine (<code>counselncare.com</code> / TealFeed), symptom self-check, proof elements, video placeholder, and mobile speed optimization.
                 </div>
               </td>
@@ -750,7 +752,7 @@
               <td>
                 <strong>Cloud Server Hosting + Lifetime Free SSL (1 Year)</strong>
                 <span class="badge-highlight">Optional</span>
-                <div style="font-size: 13px; color: var(--muted); margin-top: 5px;">
+                <div style="font-size: 10.8px; color: var(--muted); margin-top: 3px; line-height: 1.35;">
                   High-speed SSD cloud server, automated SSL security, CDN caching, and 99.9% uptime.
                   <br><em>*Note: Agar aap apni existing hosting par host karna chahein to yeh ₹1,000 deduct ho jayenge.</em>
                 </div>
@@ -761,17 +763,17 @@
               <td>
                 <strong>Total Investment (With Red Panther Cloud Hosting & SSL):</strong>
               </td>
-              <td class="price-col" style="color: var(--primary); font-size: 18px;">₹2,500</td>
+              <td class="price-col" style="color: var(--primary); font-size: 15px;">₹2,500</td>
             </tr>
             <tr style="background: #FFFFFF;">
-              <td style="color: var(--muted); font-size: 13px;">
+              <td style="color: var(--muted); font-size: 11px;">
                 Total Investment (If hosted on your own server/hosting):
               </td>
-              <td class="price-col" style="color: var(--muted); font-size: 14.5px;">₹1,500</td>
+              <td class="price-col" style="color: var(--muted); font-size: 12.5px;">₹1,500</td>
             </tr>
           </tbody>
         </table>
-        <div style="font-size: 12.5px; color: var(--muted); margin-top: 10px;">
+        <div style="font-size: 10.5px; color: var(--muted); margin-top: 6px;">
           * Payment Terms: 50% advance to start development; 50% upon final approval and live deployment.
         </div>
       </div>
@@ -782,7 +784,7 @@
           <span class="number">4</span>
           <span>After-Sales Support & Warranty</span>
         </div>
-        <div style="background: #F8FAFC; border: 1.5px solid var(--border); border-radius: 14px; padding: 20px 24px;">
+        <div style="background: #F8FAFC; border: 1.5px solid var(--border); border-radius: 10px; padding: 10px 14px;">
           <ul class="support-list">
             <li><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><div><strong>30 Days Free Technical Support:</strong> Text tweaks, pricing updates, or CTA adjustments after ad launch.</div></li>
             <li><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg><div><strong>Free Video Update:</strong> Jab bhi aapka official intro video ready ho, hum use bina kisi extra fee ke landing page me integrate kar denge.</div></li>
