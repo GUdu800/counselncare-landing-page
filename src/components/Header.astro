@@ -1,0 +1,40 @@
+---
+interface Props {
+  pulseText?: string;
+  subtitle?: string;
+  isThankYou?: boolean;
+}
+
+const {
+  pulseText = "INDIA’S TRUSTED OCD, WASWASA & ANXIETY SPECIALIST",
+  subtitle = "Aftab Siddiqui · Mental Health Counselor",
+  isThankYou = false
+} = Astro.props;
+---
+
+<!-- Top Live Pulse Strip -->
+<div class="top-pill">
+  <span class="live-dot"></span>
+  <span>{pulseText}</span>
+</div>
+
+<!-- Sticky Compact App Header -->
+<header class="app-header">
+  <div class="brand-row">
+    <svg class="brand-logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="64" height="64" rx="14" fill="#ECFDF5"/>
+      <path d="M22 14C32 10 44 15 46 26C47 30 49 32 51 34C49 36 47 37 47 41C47 45 43 46 39 46" stroke="#0B3B8C" stroke-width="3.4" stroke-linecap="round"/>
+      <path d="M25 22C25 18 30 16 34 18C37 16 41 19 40 23C43 25 41 30 37 30C35 32 30 31 28 29C25 30 23 26 25 22Z" fill="#0F8A2B" fill-opacity="0.2" stroke="#0F8A2B" stroke-width="2.4"/>
+      <path d="M18 52C21 46 27 45 32 45L38 38C39.5 36.5 41.5 38 40.5 40L35 48C32 51 26 52 21 55" stroke="#0F8A2B" stroke-width="3.2" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="brand-title">Counsel N Care</div>
+      <div class="brand-subtitle">{subtitle}</div>
+    </div>
+  </div>
+  {isThankYou ? (
+    <a href="index.html" class="header-cta-mini" style="text-decoration:none;">← Home</a>
+  ) : (
+    <button type="button" class="header-cta-mini js-open-checkout">Book Slot</button>
+  )}
+</header>

@@ -1,0 +1,63 @@
+---
+---
+
+<!-- Compact Footer -->
+<footer class="mini-footer">
+  <strong>Counsel N Care · Aftab Siddiqui</strong>
+  <p>© 2026 Counsel N Care. All sessions are 100% confidential. Not affiliated with Meta Platforms, Inc. or Google LLC.</p>
+</footer>
+
+<!-- Sticky Bottom Conversion Bar -->
+<div class="sticky-bar">
+  <div class="sticky-left">
+    <div class="sticky-price">1-on-1 Recovery Session</div>
+    <div class="sticky-sub">50–60 Min · With Aftab Siddiqui</div>
+  </div>
+  <button type="button" class="sticky-btn js-open-checkout">Book &amp; Pay Now →</button>
+</div>
+
+<!-- Instant Slot & Payment Checkout Modal (Redirects to thank-you.html after Pay) -->
+<div class="modal-backdrop" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="checkout-sheet">
+    <div class="sheet-head">
+      <h3 id="modalTitle">Book 1-on-1 Session With Aftab Siddiqui</h3>
+      <button type="button" class="close-sheet" id="closeModal" aria-label="Close">×</button>
+    </div>
+
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="clientName">Your Full Name *</label>
+        <input type="text" id="clientName" class="form-input" placeholder="Enter your name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="clientPhone">Phone / WhatsApp Number (for session link) *</label>
+        <input type="tel" id="clientPhone" class="form-input" placeholder="+91 98XXXXXXXX" required />
+      </div>
+
+      <div class="form-group">
+        <label for="clientConcern">Primary Concern *</label>
+        <select id="clientConcern" class="form-select">
+          <option value="OCD & Intrusive Thoughts">OCD &amp; Intrusive Thoughts</option>
+          <option value="Religious OCD (Waswasa / Scrupulosity)">Religious OCD (Waswasa / Scrupulosity)</option>
+          <option value="Panic Attacks & Severe Anxiety">Panic Attacks &amp; Severe Anxiety</option>
+          <option value="Marriage & Couple Counseling">Marriage &amp; Couple Counseling</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Select Preferred Time Slot *</label>
+        <div class="slot-pills">
+          <button type="button" class="slot-pill active" data-slot="Today · 6:00 PM">Today · 6 PM</button>
+          <button type="button" class="slot-pill" data-slot="Tomorrow · 11:00 AM">Tomorrow · 11 AM</button>
+          <button type="button" class="slot-pill" data-slot="Tomorrow · 7:00 PM">Tomorrow · 7 PM</button>
+        </div>
+      </div>
+
+      <button type="submit" class="cta-btn" style="margin-top:12px;">
+        <span>Proceed to Pay &amp; Confirm Slot →</span>
+        <span class="cta-sub">Redirects to Instant Confirmation &amp; Session Onboarding Page</span>
+      </button>
+    </form>
+  </div>
+</div>

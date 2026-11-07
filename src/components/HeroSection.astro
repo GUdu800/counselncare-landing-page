@@ -1,0 +1,98 @@
+---
+const stats = [
+  { num: "80–90%", lbl: "Symptom Relief" },
+  { num: "2–4 Wks", lbl: "Visible Clarity" },
+  { num: "7+ Tools", lbl: "CBT · ICBT · ACT" },
+  { num: "100%", lbl: "Confidential" }
+];
+
+const videos = [
+  {
+    id: "zdC5W8EkxtQ",
+    label: "1. OCD Loop",
+    title: "Watch: How Obsessions & Compulsions Trap Your Brain",
+    active: true
+  },
+  {
+    id: "gZI-OdzMXVo",
+    label: "2. Waswasa OCD",
+    title: "Watch: 10 Types of Waswasa (Religious OCD) Explained",
+    active: false
+  },
+  {
+    id: "4fVp04Af4dM",
+    label: "3. Panic Relief",
+    title: "Watch: Panic Attacks & Severe Anxiety Root-Cause Relief",
+    active: false
+  }
+];
+---
+
+<!-- SECTION 1: PUNCHY VISUAL HERO -->
+<section class="hero-sec">
+  <div class="wrap">
+    <div class="hero-tag-row">
+      <span class="specialist-pill">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1.06 13.54L7.4 12l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z"/></svg>
+        Evidence-Based CBT · ICBT · ACT · REBT
+      </span>
+    </div>
+
+    <h1 class="hero-h1">
+      Why OCD, Waswasa &amp; Anxiety Keep Returning — <span>And How to Break the Loop at Its Root</span>
+    </h1>
+    <p class="hero-lead">
+      Pills and temporary reassurance only calm your mind for 5 minutes. Retrain the subconscious compulsion loop in weeks with structured 1-on-1 clinical therapy.
+    </p>
+
+    <!-- 4 Visual Stat Chips -->
+    <div class="stat-grid">
+      {stats.map((s) => (
+        <div class="stat-chip">
+          <div class="stat-num">{s.num}</div>
+          <div class="stat-lbl">{s.lbl}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Compact VSL Video Player + 3 Topic Tabs -->
+    <div class="vsl-card">
+      <div class="video-container">
+        <div class="video-poster-overlay" id="vslPoster" role="button" tabindex="0">
+          <div class="play-pulse-btn">
+            <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+          </div>
+          <div class="poster-title" id="posterTitle">
+            Watch: How Obsessions &amp; Compulsions Trap Your Brain (And How to Stop It)
+          </div>
+          <div class="poster-meta">▶ By Aftab Siddiqui · Tap to Watch</div>
+        </div>
+        <iframe
+          id="vslIframe"
+          title="Aftab Siddiqui OCD and Anxiety Recovery"
+          src="about:blank"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="vsl-tabs">
+        {videos.map((v) => (
+          <button
+            type="button"
+            class={`vsl-tab ${v.active ? 'active' : ''}`}
+            data-video-id={v.id}
+            data-video-title={v.title}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>{v.label}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <button type="button" class="cta-btn js-open-checkout">
+      <span>Book 1-on-1 Diagnosis &amp; Recovery Session</span>
+      <span class="cta-sub">50–60 Min Private Video Session · Custom Audio &amp; Worksheets Included</span>
+    </button>
+  </div>
+</section>
