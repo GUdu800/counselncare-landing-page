@@ -16,30 +16,50 @@
       --slate: #334155;
       --muted: #64748B;
       --border: #E2E8F0;
-      --bg: #F8FAFC;
+      --bg: #E2E8F0;
       --card-bg: #FFFFFF;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    html, body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--slate);
-      line-height: 1.6;
-      padding: 40px 20px;
+      line-height: 1.42;
+      -webkit-font-smoothing: antialiased;
     }
+    body {
+      padding: 24px 12px;
+      display: flex;
+      justify-content: center;
+    }
+    /* Exact A4 Paper Sheet (210mm x 297mm) */
     .proposal-container {
-      max-width: 860px;
+      width: 210mm;
+      min-height: 297mm;
       margin: 0 auto;
       background: var(--card-bg);
-      border-radius: 20px;
-      box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.08);
+      border-radius: 6px;
+      box-shadow: 0 16px 48px rgba(15, 23, 42, 0.18);
       overflow: hidden;
-      border: 1px solid var(--border);
+      border: 1px solid #CBD5E1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .header {
       background: linear-gradient(135deg, #0B1325 0%, #1E293B 100%);
       color: #FFFFFF;
-      padding: 44px 48px;
+      padding: 18px 28px 16px;
       position: relative;
     }
     .header::after {
@@ -48,225 +68,235 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 3px;
       background: linear-gradient(90deg, #0F9D58, #34D399, #38BDF8);
     }
-        .logo-container {
+    .logo-container {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       flex-wrap: wrap;
     }
     .logo-badge {
       background: #FFFFFF;
-      padding: 7px 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+      padding: 4px 11px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
       display: inline-flex;
       align-items: center;
       justify-content: center;
     }
-        .red-panther-logo {
-      height: 38px;
+    .red-panther-logo {
+      height: 26px;
       width: auto;
-      max-width: 140px;
+      max-width: 110px;
       display: block;
     }
     .footer-logo {
-      height: 22px;
+      height: 18px;
       width: auto;
-      max-width: 85px;
+      max-width: 72px;
       display: block;
     }
     .brand-row {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 24px;
+      align-items: center;
+      margin-bottom: 10px;
     }
     .brand-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 24px;
+      font-size: 19px;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
       color: #FFFFFF;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     .brand-badge {
       display: inline-block;
-      font-size: 11px;
+      font-size: 9.5px;
       text-transform: uppercase;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 3px 9px;
       border-radius: 20px;
       background: rgba(16, 185, 129, 0.2);
       color: #34D399;
       border: 1px solid rgba(52, 211, 153, 0.3);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
     .meta-box {
       text-align: right;
-      font-size: 12.5px;
+      font-size: 10.5px;
       color: #94A3B8;
-      line-height: 1.5;
+      line-height: 1.38;
     }
     .meta-box strong { color: #FFFFFF; }
     .hero-title {
-      font-size: 28px;
+      font-size: 19.5px;
       font-weight: 800;
       color: #FFFFFF;
-      line-height: 1.25;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
+      line-height: 1.22;
+      margin-bottom: 4px;
+      letter-spacing: -0.3px;
     }
     .hero-sub {
-      font-size: 15px;
-      color: #94A3B8;
+      font-size: 11.5px;
+      color: #CBD5E1;
       max-width: 680px;
+      line-height: 1.38;
     }
     .client-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 16px 20px;
-      margin-top: 24px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 8px 14px;
+      margin-top: 10px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13.5px;
+      gap: 8px;
+      font-size: 11px;
     }
     .client-card div strong { color: #F1F5F9; }
     .content-body {
-      padding: 44px 48px;
+      padding: 14px 28px 10px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .section {
-      margin-bottom: 38px;
+      margin-bottom: 11px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .section:last-child {
+      margin-bottom: 0;
     }
     .section-title {
-      font-size: 18px;
+      font-size: 12.5px;
       font-weight: 800;
       color: var(--dark);
-      margin-bottom: 16px;
+      margin-bottom: 7px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 7px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
     .section-title span.number {
       background: var(--primary-light);
       color: var(--primary);
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: 10.5px;
       font-weight: 800;
     }
     .sow-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 9px;
     }
     .sow-card {
       background: #F8FAFC;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
-      transition: all 0.2s;
+      border-radius: 8px;
+      padding: 9px 11px;
     }
     .sow-card h4 {
-      font-size: 14.5px;
-      font-weight: 700;
+      font-size: 11.8px;
+      font-weight: 800;
       color: var(--dark);
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
     .sow-card ul {
       list-style: none;
-      font-size: 13px;
+      font-size: 10.4px;
       color: var(--slate);
     }
     .sow-card ul li {
       position: relative;
-      padding-left: 22px;
-      margin-bottom: 6px;
-      line-height: 1.45;
+      padding-left: 16px;
+      margin-bottom: 3.5px;
+      line-height: 1.34;
+    }
+    .sow-card ul li:last-child {
+      margin-bottom: 0;
     }
     .sow-card ul li::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 3px;
-      width: 14px;
-      height: 14px;
+      top: 2px;
+      width: 11px;
+      height: 11px;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F9D58' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
       background-size: contain;
       background-repeat: no-repeat;
     }
     .icon-svg {
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       flex-shrink: 0;
       color: var(--primary);
     }
     .support-list {
       list-style: none;
-      font-size: 13.5px;
+      font-size: 10.6px;
       color: var(--slate);
     }
     .support-list li {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 10px;
-      line-height: 1.45;
+      gap: 7px;
+      margin-bottom: 5px;
+      line-height: 1.34;
     }
     .support-list li:last-child {
       margin-bottom: 0;
     }
     .support-list .icon-svg {
-      margin-top: 2px;
+      margin-top: 1px;
     }
     .pricing-table {
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
       border: 1px solid var(--border);
-      margin-top: 14px;
+      margin-top: 4px;
     }
     .pricing-table th {
       background: #F1F5F9;
       color: var(--dark);
-      font-size: 12.5px;
-      font-weight: 700;
+      font-size: 10px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 14px 18px;
+      letter-spacing: 0.4px;
+      padding: 7px 12px;
       text-align: left;
     }
     .pricing-table td {
-      padding: 16px 18px;
-      font-size: 13.5px;
+      padding: 8px 12px;
+      font-size: 11px;
       border-top: 1px solid var(--border);
-      vertical-align: top;
-    }
-    .pricing-table tr:hover td {
-      background: #FAFAFA;
+      vertical-align: middle;
+      line-height: 1.32;
     }
     .price-col {
       text-align: right;
       font-weight: 800;
-      font-size: 15px;
+      font-size: 12.5px;
       color: var(--dark);
       white-space: nowrap;
     }
@@ -275,71 +305,69 @@
       font-weight: 800;
     }
     .total-row td {
-      border-top: 2px solid var(--border);
+      border-top: 1.5px solid var(--border);
       color: var(--dark);
+      padding: 7px 12px;
     }
     .badge-highlight {
       display: inline-block;
-      font-size: 11px;
-      padding: 2px 8px;
+      font-size: 9.5px;
+      padding: 1px 6px;
       border-radius: 4px;
       background: #FEF3C7;
       color: #92400E;
       font-weight: 700;
-      margin-left: 6px;
+      margin-left: 5px;
     }
     .timeline-banner {
       background: linear-gradient(135deg, rgba(15, 157, 88, 0.08) 0%, rgba(56, 189, 248, 0.08) 100%);
       border: 1px solid rgba(15, 157, 88, 0.25);
-      border-radius: 12px;
-      padding: 18px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
+      border-radius: 8px;
+      padding: 8px 14px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
     }
     .timeline-item h5 {
-      font-size: 11.5px;
+      font-size: 9.5px;
       text-transform: uppercase;
       color: var(--muted);
       font-weight: 700;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
     .timeline-item p {
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 800;
       color: var(--dark);
     }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 8px;
     }
     .service-box {
       background: #FFFFFF;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      border-radius: 7px;
+      padding: 7px 9px;
     }
     .service-box h5 {
-      font-size: 13.5px;
+      font-size: 10.8px;
       font-weight: 700;
       color: var(--dark);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 5px;
     }
     .service-box p {
-      font-size: 12px;
+      font-size: 9.6px;
       color: var(--muted);
-      line-height: 1.45;
+      line-height: 1.3;
     }
     .footer-actions {
       border-top: 1px solid var(--border);
-      padding: 24px 48px;
+      padding: 10px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -349,64 +377,72 @@
       background: var(--dark);
       color: #FFFFFF;
       border: none;
-      padding: 11px 22px;
-      border-radius: 10px;
+      padding: 8px 16px;
+      border-radius: 7px;
       font-weight: 700;
-      font-size: 13.5px;
+      font-size: 11.5px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       transition: background 0.2s;
     }
     .print-btn:hover {
       background: #1E293B;
     }
+    .sign-stamp {
+      display: none;
+      text-align: right;
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+    .sign-stamp strong {
+      display: block;
+      color: var(--dark);
+      font-size: 11px;
+    }
     .contact-note {
-      font-size: 12.5px;
+      font-size: 10.5px;
       color: var(--muted);
     }
     .contact-note strong { color: var(--dark); }
 
     @media print {
-      body { padding: 0; background: #FFFFFF; }
-      .proposal-container { box-shadow: none; border: none; border-radius: 0; max-width: 100%; }
-      .footer-actions { display: none; }
-      .sow-grid { grid-template-columns: 1fr 1fr; }
-      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #FFFFFF !important;
+      }
+      .proposal-container {
+        width: 210mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+      }
+      .print-btn {
+        display: none !important;
+      }
+      .sign-stamp {
+        display: block !important;
+      }
+      .sow-grid { grid-template-columns: 1fr 1fr !important; }
+      .services-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .timeline-banner { grid-template-columns: repeat(4, 1fr) !important; }
     }
-    @media (max-width: 768px) {
-      .header, .content-body, .footer-actions { padding: 24px 20px; }
+    @media screen and (max-width: 820px) {
+      body { padding: 10px; }
+      .proposal-container { width: 100%; min-height: auto; }
+      .header, .content-body, .footer-actions { padding: 18px 16px; }
       .sow-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-          .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .logo-badge {
-      background: #FFFFFF;
-      padding: 7px 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-        .red-panther-logo {
-      height: 38px;
-      width: auto;
-      max-width: 140px;
-      display: block;
-    }
-    .footer-logo {
-      height: 22px;
-      width: auto;
-      max-width: 85px;
-      display: block;
-    }
-    .brand-row { flex-direction: column; gap: 10px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .timeline-banner { grid-template-columns: 1fr 1fr; }
+      .brand-row { flex-direction: column; align-items: flex-start; gap: 8px; }
       .meta-box { text-align: left; }
     }
   </style>
@@ -632,7 +668,7 @@
             <tr>
               <td>
                 <strong>High-Converting Meta Ads Landing Page + Thank You Funnel (Astro.js)</strong>
-                <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">
+                <div style="font-size: 10px; color: var(--muted); margin-top: 2px;">
                   Built with Astro.js framework — custom design, symptom self-check, proof elements, video placeholder, Razorpay integration, and mobile speed optimization.
                 </div>
               </td>
@@ -642,9 +678,9 @@
               <td>
                 <strong>Cloud Server Hosting + Lifetime Free SSL (1 Year)</strong>
                 <span class="badge-highlight">Optional</span>
-                <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">
+                <div style="font-size: 10px; color: var(--muted); margin-top: 2px;">
                   High-speed SSD cloud server, automated SSL security, CDN caching, and 99.9% uptime.
-                  <br><em>*Note: Agar aap apni existing hosting par host karna chahein to yeh ₹1,000 deduct ho jayenge.</em>
+                  <em>(*Note: Agar aap apni existing hosting par host karna chahein to yeh ₹1,000 deduct ho jayenge.)</em>
                 </div>
               </td>
               <td class="price-col">₹1,000</td>
@@ -653,17 +689,17 @@
               <td>
                 <strong>Total Investment (With Red Panther Cloud Hosting & SSL):</strong>
               </td>
-              <td class="price-col" style="color: var(--primary); font-size: 17px;">₹2,500</td>
+              <td class="price-col" style="color: var(--primary); font-size: 14px;">₹2,500</td>
             </tr>
             <tr style="background: #FFFFFF;">
-              <td style="color: var(--muted); font-size: 12.5px;">
+              <td style="color: var(--muted); font-size: 10.5px;">
                 Total Investment (If hosted on your own server/hosting):
               </td>
-              <td class="price-col" style="color: var(--muted); font-size: 13.5px;">₹1,500</td>
+              <td class="price-col" style="color: var(--muted); font-size: 11.5px;">₹1,500</td>
             </tr>
           </tbody>
         </table>
-        <div style="font-size: 12px; color: var(--muted); margin-top: 8px;">
+        <div style="font-size: 10px; color: var(--muted); margin-top: 4px;">
           * Payment Terms: 50% advance to start development; 50% upon final approval and live deployment.
         </div>
       </div>
@@ -674,7 +710,7 @@
           <span class="number">4</span>
           <span>After-Sales Support & Warranty</span>
         </div>
-        <div style="background: #F8FAFC; border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px;">
+        <div style="background: #F8FAFC; border: 1px solid var(--border); border-radius: 8px; padding: 9px 12px;">
           <ul class="support-list">
             <li><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><div><strong>30 Days Free Technical Support:</strong> Text tweaks, pricing updates, or CTA adjustments after ad launch.</div></li>
             <li><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg><div><strong>Free Video Update:</strong> Jab bhi aapka official intro video ready ho, hum use bina kisi extra fee ke landing page me integrate kar denge.</div></li>
@@ -827,8 +863,12 @@
         </div>
         Founder: <strong>Ajaya Kumar Moharana</strong> · WhatsApp / Call: <strong>+91 7008419363</strong>
       </div>
+      <div class="sign-stamp">
+        <strong>Authorized Signatory</strong>
+        Red Panther Technologies
+      </div>
       <button class="print-btn" onclick="window.print()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg><span>Download / Print PDF</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg><span>Download / Print A4 PDF</span>
       </button>
     </div>
   </div>
