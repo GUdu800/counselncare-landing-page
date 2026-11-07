@@ -147,12 +147,21 @@
       var concern = document.getElementById('clientConcern').value;
       var bookingId = 'CNC-' + Math.floor(1000 + Math.random() * 9000);
 
+      var tealFeedUrls = {
+        'OCD & Intrusive Thoughts': 'https://tealfeed.com/care_891921/connect/call?callType=6a33e7d7be9e52a1656f9244',
+        'Religious OCD (Waswasa / Scrupulosity)': 'https://tealfeed.com/care_891921/connect/package?packageId=6a33e7cf1e9ad26920c0e452',
+        'Panic Attacks & Severe Anxiety': 'https://www.tealfeed.com/care_891921/connect/call?callType=6a4ce48f19832a00610cb914',
+        'Marriage & Couple Counseling': 'https://tealfeed.com/care_891921/connect/call?callType=6a33e7dc1e9ad26920c0e475'
+      };
+      var tealUrl = tealFeedUrls[concern] || 'https://www.bookings.tealfeed.com/members/6a23e373c88ca55ecd261939';
+
       var qs = new URLSearchParams({
         name: name,
         phone: phone,
         concern: concern,
         slot: selectedSlot,
-        id: bookingId
+        id: bookingId,
+        tealUrl: tealUrl
       });
 
       window.location.href = 'thank-you.html?' + qs.toString();

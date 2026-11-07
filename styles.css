@@ -715,6 +715,42 @@ img, svg {
   border-radius: 6px;
 }
 
+.prog-book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--teal);
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 11px;
+  border-radius: 8px;
+  margin-top: 8px;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.2);
+  transition: transform 0.15s ease;
+}
+
+.prog-book-btn:active {
+  transform: scale(0.97);
+}
+
+.tealfeed-badge-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #F8FAFC;
+  border: 1px dashed var(--teal-border);
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
 /* Compact Specialist Card */
 .specialist-compact {
   background: #fff;

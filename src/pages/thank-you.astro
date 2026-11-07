@@ -60,6 +60,29 @@ import Header from '../components/Header.astro';
       </div>
     </div>
 
+    <!-- Direct TealFeed Live Slot Selector -->
+    <div class="ty-teal-card">
+      <div class="ty-teal-badge">
+        <span class="pulse-dot"></span> LIVE CALENDAR SYNC (counselncare.com)
+      </div>
+      <h3 style="font-size:14.5px;font-weight:800;color:var(--ink);margin:4px 0 2px;">
+        Pick or Confirm Your Live Time Slot
+      </h3>
+      <p style="font-size:11.5px;color:var(--muted);line-height:1.4;margin-bottom:10px;">
+        Click below to select your exact time window directly on Aftab Siddiqui’s official booking calendar:
+      </p>
+      <a
+        id="tyTealFeedBtn"
+        href="https://www.bookings.tealfeed.com/members/6a23e373c88ca55ecd261939"
+        target="_blank"
+        rel="noopener"
+        class="cta-btn"
+        style="text-decoration:none;margin-top:0;"
+      >
+        <span>🗓️ Open Live TealFeed Booking Calendar →</span>
+      </a>
+    </div>
+
     <div class="action-grid">
       <button type="button" class="outline-btn" onclick="window.print()">
         🖨️ Save / Print Receipt
@@ -300,6 +323,28 @@ import Header from '../components/Header.astro';
       gap: 8px;
       margin-top: 10px;
     }
+    .ty-teal-card {
+      background: #f0fdfa;
+      border: 1.5px solid #0d9488;
+      border-radius: 13px;
+      padding: 12px 14px;
+      margin-top: 14px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.08);
+    }
+    .ty-teal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ccfbf1;
+      color: #0f766e;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      margin-bottom: 4px;
+    }
     .outline-btn {
       background: #fff;
       border: 1.5px solid var(--border);
@@ -330,6 +375,7 @@ import Header from '../components/Header.astro';
       var concern = params.get('concern');
       var slot = params.get('slot');
       var bid = params.get('id');
+      var tealUrl = params.get('tealUrl');
 
       if (name) document.getElementById('tyName').textContent = name;
       if (phone) document.getElementById('tyPhone').textContent = '(' + phone + ')';
@@ -340,6 +386,17 @@ import Header from '../components/Header.astro';
       } else {
         document.getElementById('tyBookingId').textContent = '#CNC-' + Math.floor(1000 + Math.random() * 9000);
       }
+
+      var tealFeedUrls = {
+        'OCD & Intrusive Thoughts': 'https://tealfeed.com/care_891921/connect/call?callType=6a33e7d7be9e52a1656f9244',
+        'Religious OCD (Waswasa / Scrupulosity)': 'https://tealfeed.com/care_891921/connect/package?packageId=6a33e7cf1e9ad26920c0e452',
+        'Panic Attacks & Severe Anxiety': 'https://www.tealfeed.com/care_891921/connect/call?callType=6a4ce48f19832a00610cb914',
+        'Marriage & Couple Counseling': 'https://tealfeed.com/care_891921/connect/call?callType=6a33e7dc1e9ad26920c0e475'
+      };
+      var targetTeal = tealUrl || (concern && tealFeedUrls[concern]) || 'https://www.bookings.tealfeed.com/members/6a23e373c88ca55ecd261939';
+      var tealBtn = document.getElementById('tyTealFeedBtn');
+      if (tealBtn) tealBtn.href = targetTeal;
+    })();
     })();
   </script>
 </BaseLayout>
